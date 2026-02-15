@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+@theme {
+  /* Amway Brand Colors - Greenish-Yellow (Primary) */
+  --color-amway-dark: #4a7c12;
+  --color-amway: #8dc63f;
+  --color-amway-light: #f0fadc;
+
+  /* Amway Brand Colors - Red (High Severity) */
+  --color-amway-red-dark: #b71c1c;
+  --color-amway-red: #e53935;
+  --color-amway-red-light: #ffebee;
+
+  /* Amway Brand Colors - Yellow (Medium Severity) */
+  --color-amway-yellow-dark: #f57f17;
+  --color-amway-yellow: #fdd835;
+  --color-amway-yellow-light: #fffde7;
+
+  /* Amway Brand Colors - Orange (Low Severity) */
+  --color-amway-orange-dark: #e65100;
+  --color-amway-orange: #ff9800;
+  --color-amway-orange-light: #fff3e0;
+
+  /* Amway Brand Colors - Blue (Regex Source) */
+  --color-amway-blue-dark: #1565c0;
+  --color-amway-blue: #42a5f5;
+  --color-amway-blue-light: #e3f2fd;
+
+  /* Amway Brand Colors - Purple (LLM Source) */
+  --color-amway-purple-dark: #6a1b9a;
+  --color-amway-purple: #ab47bc;
+  --color-amway-purple-light: #f3e5f5;
+
+  /* Semantic Color Tokens */
+  --color-brand-primary: var(--color-amway-dark);
+  --color-brand-secondary: var(--color-amway-light);
+
+  /* Font Families */
+  --font-display: Georgia, serif;
+  --font-body: system-ui, sans-serif;
+
+  /* Spacing Scale (if needed for Amway-specific spacing) */
+  --spacing-brand: 1.5rem;
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-amway-primary {
+    @apply bg-amway-dark text-white px-6 py-3 rounded-lg font-medium 
+           hover:opacity-90 transition-opacity;
+  }
+
+  .btn-amway-secondary {
+    @apply bg-amway-light text-amway-dark px-6 py-3 rounded-lg 
+           font-medium hover:opacity-80 transition-opacity;
+  }
+
+  .btn-amway-outline {
+    @apply border-2 border-amway-dark text-amway-dark px-6 py-3 
+           rounded-lg font-medium hover:bg-amway-dark hover:text-white 
+           transition-all;
+  }
+
+  /* Card Components */
+  .card-amway {
+    @apply bg-white border border-gray-200 rounded-xl p-6 shadow-sm 
+           hover:shadow-md transition-shadow;
+  }
+
+  .card-amway-accent {
+    @apply bg-amway-light border border-amway-dark/20 rounded-xl 
+           p-6 shadow-sm;
+  }
+
+  /* Section Backgrounds */
+  .section-amway-light {
+    @apply bg-amway-light;
+  }
+
+  .section-amway-dark {
+    @apply bg-amway-dark text-white;
+  }
+
+  /* Badge/Tag */
+  .badge-amway {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium 
+           bg-amway-light text-amway-dark;
+  }
+
+  /* Input Fields */
+  .input-amway {
+    @apply border border-gray-300 rounded-lg px-4 py-2 
+           focus:border-amway-dark focus:ring-2 
+           focus:ring-amway-dark/20 outline-none transition-all;
+  }
+
+  /* Typography */
+  .heading-amway {
+    @apply font-display text-amway-dark font-semibold;
+  }
+
+  .text-body-amway {
+    @apply font-body text-gray-700;
+  }
+}
+
+@layer utilities {
+  /* Gradient Utilities */
+  .gradient-amway {
+    background: linear-gradient(135deg, #4a7c12 0%, #8dc63f 100%);
+  }
+
+  .gradient-amway-light {
+    background: linear-gradient(135deg, #f0fadc 0%, #e4f5c7 100%);
+  }
+
+  .gradient-amway-radial {
+    background: radial-gradient(circle at top right, #4a7c12, #3a6500);
+  }
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gauge-fill {
+  from {
+    stroke-dashoffset: 251.2;
+  }
+}
+
+@keyframes progress-slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(200%);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out both;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out both;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.4s ease-out both;
+}
+
+.animate-gauge-fill {
+  animation: gauge-fill 1s ease-out both;
+}
+
+.animate-progress-slide {
+  animation: progress-slide 1.5s ease-in-out infinite;
+}
