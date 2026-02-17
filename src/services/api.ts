@@ -6,7 +6,7 @@ import type {
   EvaluationResult,
 } from "../types/index.ts";
 
-const BASE_URL = "/qas";
+const BASE_URL = "https://tata-sampann-hi.thefirstimpression.ai/qas"
 const POLL_INTERVAL_MS = 10_000;
 
 export async function uploadFile(file: File): Promise<UploadResponse> {
